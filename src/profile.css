@@ -1,0 +1,129 @@
+.formContainer {
+  background-color: #f8f9fa;
+  border: 1px solid #dbdbdb;
+  width: 93vw;
+  height: 73vh;
+  max-width: 800px;
+  margin-top: 6vh;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  /* display: flex; */
+  justify-content: center;
+}
+
+.profileAd {
+  /* border: 2px solid black;  */
+  height: 250px;
+}
+
+.settings {
+  /* border: 2px solid black; */
+  height: 200px;
+  width: 100%;
+}
+
+.editProf {
+  /* border: 2px solid black; */
+  height: 200px;
+  width: 100%;
+}
+
+.profilePicSet {
+  width: 225px;
+  height: 225px;
+  /* border: 2px solid black; */
+  border-radius: 124px;
+  margin-top: 30px;
+  box-shadow: 0px 0px 33px -6px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 0px 33px -6px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 33px -6px rgba(0, 0, 0, 0.75);
+}
+
+.profData {
+  /* bottom: 0px;
+  position: absolute; */
+  /* border: 2px solid black; */
+  width: 100%;
+  height: 260px;
+}
+
+.profileSubmitButtonContainer {
+  width: 100%;
+  max-width: 800px;
+  background-color: #f8f9fa;
+  border: 1px solid #dbdbdb;
+  bottom: 0;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding: 10px;
+}
+
+.logoutButton {
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.editInside {
+  left: 35px;
+  top: 15;
+}
+
+.twoHolder{
+  margin-top: 50px;
+}
+
+.dataInside{
+  margin-top: 51px;
+}
+
+.editInsideAdd{
+  right: 35px;
+  top: 15;
+}
+
+@media (max-device-width: 959px) {
+
+  .twoHolder{
+    margin-top: 80px;
+  }
+  .dataInside{
+    margin-top: 30px;
+  }
+  .editInside {
+    right: 25px;
+    top: 15;
+  }
+  
+}
+
+@media (max-device-width: 639px) {
+
+  .twoHolder{
+    margin-top: 80px;
+  }
+  .dataInside{
+    margin-top: 30px;
+  }
+  .editInside {
+    right: 20px;
+    top: 15;
+  }
+  
+}
+
+@media (max-device-width: 408px) {
+
+  .twoHolder{
+    margin-top: 85px;
+  }
+  .dataInside{
+    margin-top: 35px;
+  }
+  .editInside {
+    right: 10px;
+    top: 30;
+  }
+  
+}

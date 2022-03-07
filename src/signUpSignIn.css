@@ -1,0 +1,56 @@
+.frontContainer {
+    /* background-image: url("bgi.jpg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+  
+    box-shadow: -1px 103px 84px -31px rgba(0, 0, 0, 0.75) inset;
+    -webkit-box-shadow: -1px 103px 84px -31px rgba(0, 0, 0, 0.75) inset;
+    -moz-box-shadow: -1px 103px 84px -31px rgba(0, 0, 0, 0.75) inset;
+}
+
+.emailSpace {
+    width: 40vw;
+    height: 40px;
+    border-radius: 15px 15px 0px 0px;
+    border: none;
+}
+.passwordSpace {
+    width: 20vw;
+    height: 40px;
+    border-radius: 0px 0px 0px 0px;
+    border: none;
+}
+
+#passwordSpace{
+    width: 40vw;
+    height: 40px;
+    border-radius: 0px 0px 0px 0px;
+    border: none;
+}
+
+.confirmPasswordSpace{
+    width: 20vw;
+    height: 40px;
+    border: none;
+}
+.confirmSubmit {
+    width: 40vw;
+    height: 40px;
+    border-radius: 0px 0px 15px 15px;
+    border: none;
+    color: white;
+    background-color: black;
+}
+.confirmSubmit:hover {
+    width: 40vw;
+    height: 40px;
+    border-radius: 0px 0px 15px 15px;
+    border: none;
+    color: white;
+    background-image: linear-gradient(to right, #000000, #230a10, #3e0b15, #580814, #72050d);
+    
+}

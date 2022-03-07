@@ -1,0 +1,16 @@
+.chatOne {
+
+    /* background-color: #693FB6; */
+    /* position: absolute; */
+    opacity: 0.8;
+    padding: 0.5px;
+    border-radius: 12px;
+    margin-top: 1px;
+    padding-left: 7px;
+    max-width: 80%;
+    width:fit-content;
+    padding-right: 18px;
+    /* right: 10px; */
+    /* display: inline-block; */
+
+}
