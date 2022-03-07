@@ -233,7 +233,7 @@ const Card = (props) => {
 
         </TinderCard>
 
-        <div className="funk">
+        <div style={{marginTop:'15px'}} className="funk">
             <div style={{ padding: 4, display: 'flex', justifyContent: 'space-evenly' }}>
                 <IconButton onClick={() => onSwipe("left")} className="swipeLeft"><CloseIcon fontSize='medium' /></IconButton>
                 <IconButton onClick={props.refresh} className="swipeSuper"><AcUnitIcon fontSize='medium' /></IconButton>

@@ -10,7 +10,8 @@ const Chat = (props) => {
         backgroundColor: '#693FB6',
         right:'3px',
         marginLeft : 'auto', 
-        marginRight: 0
+        marginRight: 0,
+        marginTop: 4
 
     } 
 

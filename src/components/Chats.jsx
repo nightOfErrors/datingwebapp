@@ -23,7 +23,7 @@ const Chats = (props) => {
     const typedText = useRef()
 
     const { state } = props.location
-    console.log(props)
+    // console.log(props)
 
     const uid = currentUser.uid;
 
@@ -88,8 +88,6 @@ const Chats = (props) => {
         typedText.current.value = '';
 
     }
-
-
 
 
     return (<div>

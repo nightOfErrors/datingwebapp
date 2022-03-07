@@ -119,7 +119,7 @@ const Matches = () => {
                             borderRadius: '15px',
                             maxWidth: '600px',
                             left: '50%',
-                            width: '100%',
+                            width: '95%',
                             transform: 'translate(-50%, 0)',
                         }
                     }

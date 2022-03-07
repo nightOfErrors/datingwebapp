@@ -7,6 +7,7 @@
   margin-top: 6vh;
   position: absolute;
   left: 50%;
+  /* margin-bottom: 10px; */
   transform: translate(-50%, 0);
   /* display: flex; */
   justify-content: center;
@@ -27,6 +28,7 @@
   /* border: 2px solid black; */
   height: 200px;
   width: 100%;
+  /* border: 2px solid green; */
 }
 
 .profilePicSet {
@@ -46,7 +48,11 @@
   /* border: 2px solid black; */
   width: 100%;
   height: 260px;
+  /* border: 2px solid red; */
 }
+
+/* dataInside */
+/* profData */
 
 .profileSubmitButtonContainer {
   width: 100%;
@@ -58,6 +64,8 @@
   left: 50%;
   transform: translate(-50%, 0);
   padding: 10px;
+  /* margin-top: 10px;*/
+  /* border: 2px solid red; */
 }
 
 .logoutButton {
@@ -68,62 +76,59 @@
 .editInside {
   left: 35px;
   top: 15;
+  /* border: 2px solid yellow; */
 }
 
-.twoHolder{
+.twoHolder {
   margin-top: 50px;
+  /* border: 2px solid red; */
 }
 
-.dataInside{
+.dataInside {
   margin-top: 51px;
+  /* border: 2px solid green; */
 }
 
-.editInsideAdd{
+.editInsideAdd {
   right: 35px;
   top: 15;
 }
 
 @media (max-device-width: 959px) {
-
-  .twoHolder{
-    margin-top: 80px;
+  .twoHolder {
+    margin-top: 50px;
   }
-  .dataInside{
-    margin-top: 30px;
+  .dataInside {
+    margin-top: 85px;
   }
   .editInside {
     right: 25px;
     top: 15;
   }
-  
 }
 
 @media (max-device-width: 639px) {
-
-  .twoHolder{
-    margin-top: 80px;
+  .twoHolder {
+    margin-top: 50px;
   }
-  .dataInside{
-    margin-top: 30px;
+  .dataInside {
+    margin-top: 85px;
   }
   .editInside {
     right: 20px;
     top: 15;
   }
-  
 }
 
 @media (max-device-width: 408px) {
-
-  .twoHolder{
-    margin-top: 85px;
+  .twoHolder {
+    margin-top: 50px;
   }
-  .dataInside{
-    margin-top: 35px;
+  .dataInside {
+    margin-top: 85px;
   }
   .editInside {
     right: 10px;
     top: 30;
   }
-  
 }
