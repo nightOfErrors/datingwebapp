@@ -26,6 +26,7 @@
   flex-direction: column;
   left: 50%;
   transform: translate(-50%, 0);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .signInBut {
@@ -42,6 +43,7 @@
 
 .frontText {
   font-size: 5vw;
+  /* border: 2px solid black; */
   /* box-shadow: 0px 0px 43px 14px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 0px 0px 43px 14px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 43px 14px rgba(0, 0, 0, 0.75); */
@@ -59,15 +61,20 @@
 .signUpBut{
 
   width: 260px;
-  border: 3px solid rgb(153, 0, 255);
-  color: rgb(153, 0, 255);
+  border: 3px solid white;
+  color: white;
   border-radius: 30px;
   height: 55px;
+  background-color: transparent;
   margin: 5px;
   box-shadow: 0px 0px 43px 14px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 0px 0px 43px 14px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 43px 14px rgba(0, 0, 0, 0.75);
 
+}
+
+.buttonsContainor {
+  margin-top: 10px;
 }
 
 .signUpBut:hover {
@@ -110,21 +117,47 @@
 }
 
 @media (max-device-width: 640px) {
+
+  #contentCentered {
+    position: absolute;
+    /* padding-top: 190px; */
+    margin-top: 155px;
+    display: flex;
+    flex-direction: column;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+
+  #buttonsContainor{
+    margin-top: 150px;
+  }
+
   .frontText {
+    /* top:5px;
+    position: absolute; */
     box-shadow: none;
-    font-size: 30px;
+    font-size: 37px;
   }
   .addText {
     display: none;
   }
   .signInBut {
     margin-top: 0px;
+    width: 280px;
+    height: 48px;
+  }
+  .signUpBut {
+    margin-top: 0px;
+    width: 280px;
+    height: 48px;
+    margin-top: 7px;
   }
 }
 
-@media (max-device-width: 640px) {
+/* @media (max-device-width: 640px) {
   .frontText {
     box-shadow: none;
     font-size: 28px;
   }
-}
+} */

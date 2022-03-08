@@ -123,7 +123,7 @@ const FirstPage = () => {
 
     return (
         <div id="frontContainer">
-            <h3 style={{ marginLeft: '20px', color: 'white' }}>About</h3>
+            <b><h3 style={{ marginLeft: '15px', color: 'white' }}>about</h3></b>
             <div id="contentCentered">
                 <ReactModal isOpen={SignUpModalIsOpen} onRequestClose={() => setSignUpModalIsOpen(false)} style={
                     {
@@ -139,7 +139,7 @@ const FirstPage = () => {
                             maxWidth: '450px',
                             left: '50%',
                             transform: 'translate(-50%, 0)',
-                            width: '100%'
+                            width: '95%'
 
                         }
                     }
@@ -177,12 +177,13 @@ const FirstPage = () => {
 
                         },
                         content: {
+
                             background: '#F8F9FA',
                             borderRadius: '15px',
                             maxWidth: '450px',
                             left: '50%',
                             transform: 'translate(-50%, 0)',
-                            width: '100%'
+                            width: '95%'
 
                         }
                     }
@@ -210,15 +211,15 @@ const FirstPage = () => {
 
                 </ReactModal>
 
-                <p style={{ color: 'white' }} className="frontText"><b>Meet Someone Fun.</b></p>
-                <div style={{ marginTop: '10px' }} align="center" >
+                <p style={{ color: 'white' }} className="frontText" align="center"><b>Meet Someone Fun.</b></p>
+                <div id="buttonsContainor" align="center" >
                     <button onClick={handleModalSignIn} className="signInBut"><b>SIGN IN</b></button>
                     <button onClick={handleModalSignUp} className="signUpBut"><b>CREATE ACCOUNT</b></button>
                 </div>
             </div>
-            <div className='bottomBar' style={{ position: 'absolute', width: '90%', height: '60px', backgroundColor: 'black', bottom: '0px' }}>
+            {/* <div className='bottomBar' style={{ position: 'absolute', width: '90%', height: '60px', backgroundColor: 'black', bottom: '0px' }}>
 
-            </div>
+            </div> */}
         </div>
     )
 }
