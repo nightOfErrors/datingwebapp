@@ -213,8 +213,8 @@ const FirstPage = () => {
 
                 <p style={{ color: 'white' }} className="frontText" align="center"><b>Meet Someone Fun.</b></p>
                 <div id="buttonsContainor" align="center" >
-                    <button onClick={handleModalSignIn} className="signInBut"><b>SIGN IN</b></button>
-                    <button onClick={handleModalSignUp} className="signUpBut"><b>CREATE ACCOUNT</b></button>
+                    <button onClick={handleModalSignIn} style={{outline:'none'}} className="signInBut"><b>SIGN IN</b></button>
+                    <button onClick={handleModalSignUp} style={{outline:'none'}} className="signUpBut"><b>CREATE ACCOUNT</b></button>
                 </div>
             </div>
             {/* <div className='bottomBar' style={{ position: 'absolute', width: '90%', height: '60px', backgroundColor: 'black', bottom: '0px' }}>

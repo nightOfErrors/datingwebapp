@@ -127,19 +127,19 @@ const Card = (props) => {
                         // console.log(updateAnotherMatches)
 
                         app.firestore().collection('people').doc(currentUser.uid).collection('matches').add({
-                        uid: props.id,
-                        name: props.name,
-                        description: props.description,
-                        age: props.age,
-                        pic: props.pic
+                            uid: props.id,
+                            name: props.name,
+                            description: props.description,
+                            age: props.age,
+                            pic: props.pic
                         })
 
                         app.firestore().collection('people').doc(props.id).collection('matches').add({
-                        uid: currentUser.uid,
-                        name: currentUserData.name,
-                        description: currentUserData.description,
-                        age: currentUserData.age,
-                        pic: currentUserData.pic
+                            uid: currentUser.uid,
+                            name: currentUserData.name,
+                            description: currentUserData.description,
+                            age: currentUserData.age,
+                            pic: currentUserData.pic
                         })
 
                     }
@@ -179,7 +179,7 @@ const Card = (props) => {
             bottom: '22%',
             tag: 'VIEW PROFILE',
             width: '140px',
-            outline:'none' ,
+            outline: 'none',
             height: '40px',
             borderRadius: '4px',
             left: '50%',
@@ -190,6 +190,7 @@ const Card = (props) => {
             minHeight: '70vh',
             display: 'none'
         }
+
     }
     else {
         profileStyles = {
@@ -198,9 +199,9 @@ const Card = (props) => {
         buttonStyles = {
             display: userSelf(),
             bottom: '1%',
-            tag: <ArrowBackIosIcon />,
+            tag: <ArrowBackIosIcon style={{ marginLeft: '8px' }} />,
             opacity: '0.9',
-            outline: 'none' ,
+            outline: 'none',
             width: '60px',
             height: '60px',
             borderRadius: '70px',
@@ -217,7 +218,7 @@ const Card = (props) => {
 
         <button onClick={managerHandler} style={buttonStyles} className="viewButton"><h7>{buttonStyles.tag}</h7></button>
 
-        <TinderCard onSwipe={onSwipe} preventSwipe={["up", "down"]}>
+        {!profileStylesManager && (<TinderCard onSwipe={onSwipe} preventSwipe={["up", "down"]}>
 
             <div className="displayCard" style={profileStyles}>
                 <div className="imgContainer" style={{ backgroundImage: `url(${props.pic})` }}>
@@ -233,9 +234,26 @@ const Card = (props) => {
                 </div>
             </div>
 
-        </TinderCard>
+        </TinderCard>)}
+        {profileStylesManager && (<div onSwipe={onSwipe} preventSwipe={["up", "down"]}>
 
-        <div style={{marginTop:'15px'}} className="funk">
+            <div className="displayCard" style={profileStyles}>
+                <div className="imgContainer" style={{ backgroundImage: `url(${props.pic})` }}>
+                    <h1 className="ageCard">{props.age}</h1>
+                    {/* <button onClick={styleControl} className="viewButton"><h7>VIEW PROFILE</h7></button> */}
+                </div>
+                <div align="center" className="profileDes">
+                    <h1>{props.name}</h1>
+                    <h5 style={{ maxWidth: '95%', color: '#727273' }}>{props.description}</h5>
+                </div>
+                <div style={profileDetailsStyles}>
+                    <AllProfileDetails />
+                </div>
+            </div>
+
+        </div>)}
+
+        <div style={{ marginTop: '15px' }} className="funk">
             <div style={{ padding: 4, display: 'flex', justifyContent: 'space-evenly' }}>
                 <IconButton onClick={() => onSwipe("left")} className="swipeLeft"><CloseIcon fontSize='medium' /></IconButton>
                 <IconButton onClick={props.refresh} className="swipeSuper"><AcUnitIcon fontSize='medium' /></IconButton>
