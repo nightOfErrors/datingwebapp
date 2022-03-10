@@ -87,11 +87,17 @@ const ProfileForm = () => {
     const [ErrorsModalIsOpen, setErrorsModalIsOpen] = useState(false);
 
 
+
+    const [instaDate, setInstaDate] = useState();
+
+
+
     const handleDateChange = (date) => {
 
         let today = new Date();
         let birthDate = new Date(date);
         // console.log(date)
+        setInstaDate(birthDate)
 
         // setSelectedDate(birthDate)
 
@@ -137,6 +143,8 @@ const ProfileForm = () => {
 
     const [picUrl, setPicUrl] = useState('')
 
+    let picUpdate = ""
+
     function handleSubmit(e) {
 
         e.preventDefault();
@@ -160,19 +168,21 @@ const ProfileForm = () => {
         }
         else {
             let uploadTask = app.storage().ref('users/' + currentUser.uid + '/profile.jpg');
-            uploadTask.put(file).on("state_changed", (snapshot) => {
-
-            },
-                (error) => {
+            uploadTask.put(file).on("state_changed", snapshot => { },
+                error => {
                     console.log(error);
                 },
                 async () => {
-                    setPicUrl(await uploadTask.getDownloadURL());
-                    console.log(picUrl)
-                } 
+                    await app.storage().ref("users").child(currentUser.uid).child("/profile.jpg").getDownloadURL().then(url => {
+                        // console.log(url)
+                        // setPicUrl(url)
+                        picUpdate = url
+                        // console.log(picUpdate)
+                    })
+                }
             )
             app.firestore().collection('people').doc(currentUser.uid).set({
-                age: selectedDate, currentCity: currentLocation, description: about, gender: state, name: displayName
+                age: selectedDate, pic: picUpdate, currentCity: currentLocation, description: about, gender: state, name: displayName
             }, { merge: true });
 
 
@@ -186,11 +196,11 @@ const ProfileForm = () => {
 
     // API
 
-    
+
 
     return (<div>
 
-        <Nav />
+        {/* <Nav /> */}
         <form>
 
             <div className="formContainer">
@@ -224,7 +234,7 @@ const ProfileForm = () => {
                                     margin="normal"
                                     id="date-picker-inline"
                                     label="Date Of Birth"
-                                    value={selectedDate}
+                                    value={instaDate}
                                     onChange={handleDateChange}
                                     KeyboardButtonProps={{
                                         'aria-label': 'change date',

@@ -1,12 +1,13 @@
 import '../editProfile.css'
 import '../nav.css'
-
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import ForumIcon from '@material-ui/icons/Forum';
 import IconButton from '@material-ui/core/IconButton';
 import HomeIcon from '@material-ui/icons/Home';
 import WhatshotIcon from '@material-ui/icons/Whatshot';
 import { Link } from "react-router-dom";
+
+import EditTwoToneIcon from '@material-ui/icons/EditTwoTone';
 
 import React, { useState, useRef, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
@@ -58,15 +59,17 @@ const EditProfile = () => {
         age: "",
         description: "",
         gender: "",
-        pic: ""
+        pic: "",
+        area: ""
     });
 
 
-    // useEffect(() => {
-    //     app.firestore().collection('people').doc(currentUser.uid).onSnapshot(snapshot => {
-    //         setGotUserData(snapshot.data())
-    //     })
-    // }, [])
+    useEffect( async () => {
+        app.firestore().collection('people').doc(currentUser.uid).onSnapshot(snapshot => {
+            setGotUserData(snapshot.data())
+        })
+        console.log(gotUserdata)
+    }, [])
 
     // let picOption = "Change"
     // if (gotUserdata.pic == "") {
@@ -90,7 +93,7 @@ const EditProfile = () => {
 
     // console.log(file.name)
 
-    const [fileName, setFileName] = useState("Add Profile")
+    const [fileName, setFileName] = useState("Edit Pic")
 
     useEffect(() => {
         if (file !== null) {
@@ -179,7 +182,7 @@ const EditProfile = () => {
                     {/* ref={getPic} */}
                     <div className="profilePicUpload" align="center">
                         <input ref={getPic} style={{ display: 'none' }} onChange={oriUpPic} id="addProfBut" type="file" />
-                        <label for="addProfBut" className="addProfBut"><AddIcon style={{ marginTop: '11px' }} /></label>
+                        <label for="addProfBut" className="addProfBut"><EditTwoToneIcon style={{ marginTop: '11px' }} /></label>
                         <h5 style={{ color: 'white' }}>{/* {picOption} */}{fileName}</h5>
                     </div>
 
@@ -189,12 +192,12 @@ const EditProfile = () => {
                                 <AccountCircle />
                             </Grid>
                             <Grid item>
-                                <TextField onChange={handleDisplayName} id="input-with-icon-grid" label="Full Name" />
+                                <TextField value={gotUserdata.name} onChange={handleDisplayName} id="input-with-icon-grid" label="Full Name" />
                             </Grid>
                         </Grid>
                     </div>
 
-                    {/* ALERT */}
+                    {/* ALERT */} 
 
 
                     <ReactModal isOpen={ErrorsModalIsOpen} onRequestClose={() => setErrorsModalIsOpen(false)} style={
@@ -235,14 +238,14 @@ const EditProfile = () => {
                                 <LocationCityIcon />
                             </Grid>
                             <Grid item>
-                                <TextField id="input-with-icon-grid" onChange={handleCurrentLocation} label="Current Location" />
+                                <TextField value={gotUserdata.currentCity} id="input-with-icon-grid" onChange={handleCurrentLocation} label="Current Location" />
                             </Grid>
                         </Grid>
                     </div>
 
 
                     <div className="formItem" id="aboutYou" align="center" >
-                        <input id="aboutYouInput" maxLength="50" onChange={handleAbout} class="form-control" type="text" placeholder="Describe yourself in a line" aria-label="readonly input example" readonly></input>
+                        <input value={gotUserdata.description} id="aboutYouInput" maxLength="50" onChange={handleAbout} class="form-control" type="text" placeholder="Describe yourself in a line" aria-label="readonly input example" readonly></input>
                     </div>
 
 

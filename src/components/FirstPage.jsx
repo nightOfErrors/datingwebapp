@@ -50,6 +50,7 @@ const FirstPage = () => {
         e.preventDefault();
 
         if (passwordSignup.current.value !== confirmPasswordSignup.current.value) {
+            alert("Passwords dosen't match!")
             return setError("passwords dosen't match!")
         }
         try {
@@ -61,7 +62,7 @@ const FirstPage = () => {
             })
             history.push('/personaldetails')
         } catch {
-            setError("soory please try again!")
+            setError("Sorry please try again!")
         }
 
         setLoadingSignUp(false);
@@ -98,10 +99,18 @@ const FirstPage = () => {
 
         try {
             setLoading(true);
-            await app.auth().signInWithEmailAndPassword(email.current.value, password.current.value);
-            history.push('/profile');
+            try {
+                await app.auth().signInWithEmailAndPassword(email.current.value, password.current.value);
+                history.push('/profile');
+            }
+            catch {
+                setError("Username or Password is incorrect")
+                alert("Username or Password is incorrect")
+            }
+
         } catch {
             setError("please try again!")
+            alert("please try again!")
         }
 
         setLoading(false);
@@ -213,8 +222,8 @@ const FirstPage = () => {
 
                 <p style={{ color: 'white' }} className="frontText" align="center"><b>Meet Someone Fun.</b></p>
                 <div id="buttonsContainor" align="center" >
-                    <button onClick={handleModalSignIn} style={{outline:'none'}} className="signInBut"><b>SIGN IN</b></button>
-                    <button onClick={handleModalSignUp} style={{outline:'none'}} className="signUpBut"><b>CREATE ACCOUNT</b></button>
+                    <button onClick={handleModalSignIn} style={{ outline: 'none' }} className="signInBut"><b>SIGN IN</b></button>
+                    <button onClick={handleModalSignUp} style={{ outline: 'none' }} className="signUpBut"><b>CREATE ACCOUNT</b></button>
                 </div>
             </div>
             {/* <div className='bottomBar' style={{ position: 'absolute', width: '90%', height: '60px', backgroundColor: 'black', bottom: '0px' }}>
