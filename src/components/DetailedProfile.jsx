@@ -20,9 +20,10 @@ const AllProfileDetails = () => {
         <h5 style={{marginLeft:'7px', marginTop:'15px'}}>About Me</h5>
         <div style={{padding:'5px'}}>
             <p style={{color:'#727273'}}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Recusandae sit earum accusamus itaque a, molestiae quia, maxime laboriosam doloribus quaerat 
-                ipsam voluptates! Ipsa dolores consectetur minus veritatis unde nulla ullam.
+                These all are the test profiles so, the dosen't have much information.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla possimus eos iure nam,
+                 molestias perferendis quisquam ducimus quam aliquam repellendus.
+                 Eaque quos cumque quas earum veritatis minus repellendus nobis architecto.
             </p>
         </div>
     </div> );

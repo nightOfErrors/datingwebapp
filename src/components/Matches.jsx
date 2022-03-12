@@ -119,7 +119,7 @@ const Matches = () => {
                 <h4 style={{ marginTop: '25px', marginLeft: '20px' }} >matches</h4>
                 <h6 style={{ position: 'absolute', left: '50%', transform: 'translate(-50%, 0)', marginTop: '17px', display: noMatch }}>Sorry you haven't got any match yet.</h6>
 
-                <div className="matchContainer">
+                <div style={{overflowX:'auto'}} className="matchContainer">
                     {matches.map(matchesGot => <Match name={matchesGot.name} pic={matchesGot.pic} age={matchesGot.age} storyProfileClicked={profileClicked} key={matchesGot.key} id={matchesGot.key} />)}
                 </div>
 
@@ -156,7 +156,7 @@ const Matches = () => {
                 <div>
                     <h4 style={{ marginTop: '25px', marginLeft: '20px' }}>chats</h4>
                     <h6 style={{ position: 'absolute', left: '50%', transform: 'translate(-50%, 0)', marginTop: '55px', display: noChat }}>Sorry you haven't got any chat yet.</h6>
-                    <div className="chatContainer">
+                    <div style={{overflowY:'auto'}} className="chatContainer">
 
                         {oldBackMessages.map(backMessages => <Chatss id={backMessages} key={backMessages} matches={matches} profile={profile} />)}
 

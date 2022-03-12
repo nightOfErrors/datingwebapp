@@ -42,11 +42,11 @@ const Profile = () => {
 
     const { currentUser } = useAuth();
 
-    useEffect(() => {
+    useEffect( async () => {
 
         if (currentUser) {
 
-            app.firestore().collection('people').doc(currentUser.uid).get().then(doc => {
+            await app.firestore().collection('people').doc(currentUser.uid).get().then(doc => {
                 setPersonalInfo(doc.data())
             })
         }

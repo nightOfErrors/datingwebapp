@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import HomeIcon from '@material-ui/icons/Home';
 import WhatshotIcon from '@material-ui/icons/Whatshot';
+import ReactModal from 'react-modal';
 
 import Button from '@material-ui/core/Button';
 
@@ -41,13 +42,13 @@ const EditIntrests = () => {
     const [aboutDes, setAboutDes] = useState("")
 
 
-    function workoutFunc(e){
+    function workoutFunc(e) {
         // console.log(e.targrt.value)
     }
 
 
 
-    function dataUpload(){
+    function dataUpload() {
 
         // app.firestore().collection('people').doc(currentUser.uid).collection('moreDetails').set({
         //     aboutDetails : '',
@@ -80,41 +81,71 @@ const EditIntrests = () => {
                         <div style={{ display: 'flex', height: '35px', backgroundColor: '#A671D8', padding: '5px', borderRadius: '14px', marginTop: '10px', marginLeft: '10px' }} >
                             <FitnessCenterIcon style={{ width: '17px', color: 'white' }} />
                             <p style={{ font: '5px', marginLeft: '10px' }}>workout</p>
-                            <input onChange={workoutFunc} style={{marginTop:'7px', marginLeft:'22px', marginRight:'7px'}} type="checkbox"></input>
+                            <input onChange={workoutFunc} style={{ marginTop: '7px', marginLeft: '22px', marginRight: '7px' }} type="checkbox"></input>
                         </div>
 
                         <div style={{ display: 'flex', height: '35px', backgroundColor: '#A671D8', padding: '5px', borderRadius: '14px', marginLeft: '10px', marginTop: '10px' }}>
                             <LocalBarIcon style={{ width: '17px', color: 'white' }} />
                             <p style={{ font: '5px', marginLeft: '10px' }}>drink</p>
-                            <input style={{marginTop:'7px', marginLeft:'22px', marginRight:'7px', border:'2px solid black'}} type="checkbox"></input>
+                            <input style={{ marginTop: '7px', marginLeft: '22px', marginRight: '7px', border: '2px solid black' }} type="checkbox"></input>
                         </div>
 
                         <div style={{ display: 'flex', height: '35px', backgroundColor: '#A671D8', padding: '5px', borderRadius: '14px', marginLeft: '10px', marginTop: '10px' }}>
                             <SmokingRoomsIcon style={{ width: '17px', color: 'white' }} />
                             <p style={{ font: '5px', marginLeft: '10px' }}>smoke</p>
-                            <input style={{marginTop:'7px', marginLeft:'22px', marginRight:'7px'}} type="checkbox"></input>
+                            <input style={{ marginTop: '7px', marginLeft: '22px', marginRight: '7px' }} type="checkbox"></input>
                         </div>
 
                         <div style={{ display: 'flex', height: '35px', backgroundColor: '#A671D8', padding: '5px', borderRadius: '14px', marginLeft: '10px', marginTop: '10px' }}>
                             <SchoolIcon style={{ width: '17px', color: 'white' }} />
                             <p style={{ font: '5px', marginLeft: '10px' }}>college</p>
-                            <input style={{marginTop:'7px', marginLeft:'22px', marginRight:'7px'}} type="checkbox"></input>
+                            <input style={{ marginTop: '7px', marginLeft: '22px', marginRight: '7px' }} type="checkbox"></input>
                         </div>
 
                     </div>
                 </div>
 
-                <div className="formDatas" style={{marginTop:'10px'}}>
+                <ReactModal isOpen={true} style={
+                    {
+                        overlay: {
+                            width: '100%',
+                            // width: '100%',
+                            backgroundColor: 'black',
+                            opacity: '0.85'
+
+                        },
+                        content: {
+                            background: '#FFF3CD',
+                            borderRadius: '7px',
+                            maxWidth: '700px',
+                            left: '50%',
+                            transform: 'translate(-50%, 0)',
+                            width: '100%',
+                            height: '75px',
+                            marginTop: '300px',
+                            border: '1px solid #856445',
+                            // opacity:'2'
+
+                        }
+                    }
+                }>
+                    {/* <button onClick={() => setErrorsModalIsOpen(false)} style={{ position: 'absolute', top: '0px', right: '0px', border: 'none', backgroundColor: '#F8F9FA' }}><CloseIcon /></button>
+                        <h5 style={{ color: '#856445' }}>{errors}</h5> */}
+                        <b><p style={{fontSize:'17px'}}>This Section Is Under Developement, Please Return.</p></b>
+
+                </ReactModal>
+
+                <div className="formDatas" style={{ marginTop: '10px' }}>
                     <h5>Add Your Intrests :</h5>
                     <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '15px' }}>
 
-                        <input className="inputIntrests" placeholder="add intrest" style={{ color:'#A671D8', backgroundColor:'#DBDBDB', height:'40px', width:'115px', marginTop: '5px', marginLeft: '10px', border: '2px solid #A671D8', borderRadius: '5px' }}></input>
+                        <input className="inputIntrests" placeholder="add intrest" style={{ color: '#A671D8', backgroundColor: '#DBDBDB', height: '40px', width: '115px', marginTop: '5px', marginLeft: '10px', border: '2px solid #A671D8', borderRadius: '5px' }}></input>
 
-                        <input className="inputIntrests" placeholder="add intrest" style={{ color:'#A671D8', backgroundColor:'#DBDBDB', height:'40px', width:'115px', marginTop: '5px', marginLeft: '10px', border: '2px solid #A671D8', borderRadius: '5px' }}></input>
+                        <input className="inputIntrests" placeholder="add intrest" style={{ color: '#A671D8', backgroundColor: '#DBDBDB', height: '40px', width: '115px', marginTop: '5px', marginLeft: '10px', border: '2px solid #A671D8', borderRadius: '5px' }}></input>
 
-                        <input className="inputIntrests" placeholder="add intrest" style={{ color:'#A671D8', backgroundColor:'#DBDBDB', height:'40px', width:'115px', marginTop: '5px', marginLeft: '10px', border: '2px solid #A671D8', borderRadius: '5px' }}></input>
+                        <input className="inputIntrests" placeholder="add intrest" style={{ color: '#A671D8', backgroundColor: '#DBDBDB', height: '40px', width: '115px', marginTop: '5px', marginLeft: '10px', border: '2px solid #A671D8', borderRadius: '5px' }}></input>
 
-                        <input className="inputIntrests" placeholder="add intrest" style={{ color:'#A671D8', backgroundColor:'#DBDBDB', height:'40px', width:'115px', marginTop: '5px', marginLeft: '10px', border: '2px solid #A671D8', borderRadius: '5px' }}></input>
+                        <input className="inputIntrests" placeholder="add intrest" style={{ color: '#A671D8', backgroundColor: '#DBDBDB', height: '40px', width: '115px', marginTop: '5px', marginLeft: '10px', border: '2px solid #A671D8', borderRadius: '5px' }}></input>
 
                     </div>
                 </div>

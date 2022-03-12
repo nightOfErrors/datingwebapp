@@ -5,7 +5,7 @@ import '../bgi.jpg'
 import '../googlelogo.png'
 
 import app from '../firebase';
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import AuthContext from '../context/AuthContext';
 import { useHistory } from "react-router-dom";
@@ -93,6 +93,18 @@ const FirstPage = () => {
     // const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
 
+    const [guestUser, setGuestUser] = useState({
+        email : "guest@test.com",
+        password: "guest1253"
+    })
+
+    const guestSignIn = async () => {
+
+        await app.auth().signInWithEmailAndPassword(guestUser.email, guestUser.password);
+        history.push('/profile');
+
+    }
+
     async function handleSignIn(e) {
 
         e.preventDefault();
@@ -156,7 +168,7 @@ const FirstPage = () => {
 
                     <div align='center'>
                         <button onClick={() => setSignUpModalIsOpen(false)} style={{ position: 'absolute', top: '0px', right: '0px', border: 'none', backgroundColor: '#F8F9FA' }}><CloseIcon /></button>
-                        <b><p style={{ fontFamily: 'inherit', marginTop: '75px', fontSize: '27px', color: 'purple' }}>CREATE ACCOUNT</p></b>
+                        <b><p style={{ fontFamily: 'inherit', marginTop: '60px', fontSize: '27px', color: 'purple' }}>CREATE ACCOUNT</p></b>
                         <div style={{ marginTop: '60px' }}>
                             <div>
                                 <form>
@@ -172,6 +184,10 @@ const FirstPage = () => {
                             <div>
                                 <button onClick={googleSignUpAuth} className="signUpGoogle" style={{ width: '100%', height: '60px', marginTop: '10px' }}><div style={{ display: 'flex' }}><div className="googleImage" style={{ height: '40px', width: '40px', marginLeft: '10px' }}></div><b style={{ color: '#8B949F', marginTop: '5px', marginLeft: '8%' }}>Create Account With Google</b></div></button>
                             </div>
+                            <div style={{ marginTop: '15px' }}>
+                                <b><h5>OR</h5></b>
+                            </div>
+                            <button onClick={guestSignIn} style={{ backgroundColor: 'black', border: 'none', color: 'white', width: '70%', marginTop: '10px', height: '55px', borderRadius: '40px' }}>GUEST USER</button>
                         </div>
                     </div>
 
@@ -198,10 +214,13 @@ const FirstPage = () => {
                     }
                 }>
 
-                    <div align='center'>
+                    <div align='center' >
                         <button onClick={() => setSignInModalIsOpen(false)} style={{ position: 'absolute', top: '0px', right: '0px', border: 'none', backgroundColor: '#F8F9FA' }}><CloseIcon /></button>
-                        <b><p style={{ fontFamily: 'inherit', marginTop: '75px', fontSize: '27px', color: 'purple' }}>SIGN IN</p></b>
-                        <div style={{ marginTop: '60px' }}>
+                        <b><p style={{ fontFamily: 'inherit', marginTop: '60px', fontSize: '27px', color: 'purple' }}>SIGN IN</p></b>
+
+                        <div style={{ marginTop: '70px' }}>
+
+
                             <div>
                                 <form>
                                     <input ref={email} type="email" style={{ width: '100%', height: '40px', borderRadius: '15px 15px 0px 0px', border: 'none' }} placeholder="Enter Email"></input><br />
@@ -209,12 +228,18 @@ const FirstPage = () => {
                                     <button disabled={loading} onClick={handleSignIn} style={{ width: '100%', height: '40px', borderRadius: '0px 0px 15px 15px', border: 'none', color: 'white', backgroundColor: 'black' }}>SIGN IN</button>
                                 </form>
                             </div>
+
                             <div style={{ marginTop: '15px' }}>
                                 <b><h5>OR</h5></b>
                             </div>
                             <div>
                                 <button onClick={googleSignInAuth} className="signUpGoogle" style={{ width: '100%', height: '60px', marginTop: '10px' }}><div style={{ display: 'flex' }}><div className="googleImage" style={{ height: '40px', width: '40px', marginLeft: '10px' }}></div><b style={{ color: '#8B949F', marginTop: '5px', marginLeft: '9%' }}>Login With Google Account</b></div></button>
                             </div>
+
+                            <div style={{ marginTop: '15px' }}>
+                                <b><h5>OR</h5></b>
+                            </div>
+                            <button onClick={guestSignIn} style={{ backgroundColor: 'black', border: 'none', color: 'white', width: '70%', marginTop: '10px', height: '55px', borderRadius: '40px' }}>GUEST USER</button>
                         </div>
                     </div>
 
