@@ -144,7 +144,7 @@ const FirstPage = () => {
 
     return (
         <div id="frontContainer">
-            <b><h3 style={{ marginLeft: '15px', color: 'white' }}>about</h3></b>
+            {/* <b><h3 style={{ marginLeft: '15px', color: 'white' }}>about</h3></b> */}
             <div id="contentCentered">
                 <ReactModal isOpen={SignUpModalIsOpen} onRequestClose={() => setSignUpModalIsOpen(false)} style={
                     {
