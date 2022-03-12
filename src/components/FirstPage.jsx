@@ -187,7 +187,7 @@ const FirstPage = () => {
                             <div style={{ marginTop: '15px' }}>
                                 <b><h5>OR</h5></b>
                             </div>
-                            <button onClick={guestSignIn} style={{ backgroundColor: 'black', border: 'none', color: 'white', width: '70%', marginTop: '10px', height: '55px', borderRadius: '40px' }}>GUEST USER</button>
+                            <button onClick={guestSignIn} style={{ backgroundColor: 'black', outline:'none', border: 'none', color: 'white', width: '70%', marginTop: '10px', height: '55px', borderRadius: '40px' }}>GUEST USER</button>
                         </div>
                     </div>
 
@@ -239,7 +239,7 @@ const FirstPage = () => {
                             <div style={{ marginTop: '15px' }}>
                                 <b><h5>OR</h5></b>
                             </div>
-                            <button onClick={guestSignIn} style={{ backgroundColor: 'black', border: 'none', color: 'white', width: '70%', marginTop: '10px', height: '55px', borderRadius: '40px' }}>GUEST USER</button>
+                            <button onClick={guestSignIn} style={{ backgroundColor: 'black', outline:'none', border: 'none', color: 'white', width: '70%', marginTop: '10px', height: '55px', borderRadius: '40px' }}>GUEST USER</button>
                         </div>
                     </div>
 
